@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   http: any
   font_awesome_flutter: ^8.5.0 
+  shared_preferences: ^0.5.4+5
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

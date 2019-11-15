@@ -1,5 +1,6 @@
+import 'package:app_stock/pages/login_page.dart';
 import 'package:app_stock/pages/users_page.dart';
-import 'package:app_stock/screens/main_screen.dart';
+//import 'package:app_stock/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Prompt'
       ),
       //home: UserPage(),
-      home:MainScreen(),
+      home:LoginPage(),
       routes: routes,
 
     );

@@ -1,3 +1,4 @@
+import 'package:app_stock/Widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
@@ -47,6 +48,7 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('User list'),),
+      drawer: AppDrawer(),
       body: RefreshIndicator(
         onRefresh: getUsers,
               child: isLoading ? Center( child:CircularProgressIndicator())  

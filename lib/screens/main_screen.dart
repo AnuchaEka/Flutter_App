@@ -69,13 +69,16 @@ class _MainScreenState extends State<MainScreen> {
               title: Text(
                 'ข้อมูลส่วนตัว',
                 style: myStyle2,
-              )),
+              )
+              
+              ),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               title: Text(
                 'ตั้งค่า',
                 style: myStyle2,
               )),
+             
         ]);
 
  
