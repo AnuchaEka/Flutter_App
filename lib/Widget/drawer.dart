@@ -132,7 +132,7 @@ class _AppDrawerState extends State<AppDrawer> {
               trailing: icon_r,
               onTap: () {
                 // Navigator.of(context).pop();
-                Navigator.of(context).pushReplacementNamed('/mainPage`');
+                Navigator.of(context).pushReplacementNamed('/mainPage');
                 // Update the state of the app.
                 // ...
               },
