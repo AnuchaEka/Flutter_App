@@ -1,5 +1,6 @@
 import 'package:app_stock/pages/login_page.dart';
 import 'package:app_stock/pages/users_page.dart';
+import 'package:app_stock/screens/main_screen.dart';
 //import 'package:app_stock/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
 
     final routes = <String, WidgetBuilder>{
+     '/mainPage': (BuildContext context) => MainScreen(),
      '/users': (BuildContext context) => UserPage(),
   };
 

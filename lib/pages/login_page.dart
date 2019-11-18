@@ -1,5 +1,5 @@
+import 'package:app_stock/screens/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:app_stock/pages/home_page.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -52,19 +52,47 @@ Future<Null> _doLogin() async {
 
     try {
 
-      Map bodyData = {"username": ctrlUsername.text, "password": ctrlPassword.text};
-      final  response = await apiProvider.postData('Account/login',bodyData);
+      Map bodyData = {"u_username": ctrlUsername.text, "u_password": ctrlPassword.text};
+      final  response = await apiProvider.postData('Account/login',jsonEncode(bodyData));
 
       //print(response);
 
       if (response.statusCode == 200) {
         var jsonResponse = json.decode(response.body);
 
-       print(jsonResponse);
+       //print(jsonResponse);
 
-        // List<Map> streetsList = new List<Map>.from(jsonResponse['data']);
+       // List<Map> streetsList = new List<Map>.from(jsonResponse['data']);
 
-        //print(streetsList[0]['u_name']);
+        print(jsonResponse['message']);
+        if(jsonResponse['status']){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainScreen()));
+          //print(streetsList);
+
+        }else{
+
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            // return object of type Dialog
+                            return AlertDialog(
+                              title: new Text("แจ้งเตือน!!",textAlign: TextAlign.center),
+                              content: new Text("ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง",style: TextStyle(fontSize: 13),),
+                              actions: <Widget>[
+                                // usually buttons at the bottom of the dialog
+                                new FlatButton(
+                                  child: new Text("ตกลง"),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
+               
+
+        }
 
         // SharedPreferences prefs =await SharedPreferences.getInstance();
         // prefs.setString('u_name', streetsList[0]['u_name']);
