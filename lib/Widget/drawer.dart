@@ -56,10 +56,9 @@ class _AppDrawerState extends State<AppDrawer> {
         });
       }
     } catch (error) {
-      setState(() {
-        //isLoading = false;
-
-      });
+      // setState(() {
+      //   //isLoading = false;
+      // });
       print(error);
     }
   }
