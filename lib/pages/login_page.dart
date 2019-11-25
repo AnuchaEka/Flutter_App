@@ -64,7 +64,8 @@ Future<Null> _doLogin() async {
 
        // List<Map> streetsList = new List<Map>.from(jsonResponse['data']);
 
-        print(jsonResponse['message']);
+        //print(jsonResponse['message']);
+        
         if(jsonResponse['status']){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainScreen()));
           //print(streetsList);
@@ -76,7 +77,7 @@ Future<Null> _doLogin() async {
                           builder: (BuildContext context) {
                             // return object of type Dialog
                             return AlertDialog(
-                              title: new Text("แจ้งเตือน!!",textAlign: TextAlign.center),
+                              title: new Text("แจ้งเตือน!!",textAlign: TextAlign.center,style: TextStyle(fontSize: 16),),
                               content: new Text("ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง",style: TextStyle(fontSize: 13),),
                               actions: <Widget>[
                                 // usually buttons at the bottom of the dialog
